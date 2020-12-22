@@ -1,0 +1,40 @@
+.top {
+    height: 200px;
+    border: 1px solid black;
+    background-color: burlywood;
+}
+
+.relative {
+    position: relative;
+    /* top: 300px; */
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    overflow: scroll;
+    /* transform: rotate(90deg); */
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.sticky {
+    position: sticky;
+    top: 10px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}

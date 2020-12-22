@@ -1,45 +1,112 @@
-body {
-    box-sizing: border-box;
-    position: relative;
+html {
+    font-family: sans-serif;
+  }
+
+  body {
     margin: 0;
-}
+  }
 
-header {
+  header {
+    background: purple;
+    height: 100px;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+  }
+
+  /* axis demonstration */
+  /* section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 800px;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      align-items: stretch
+  }
+
+  article:last-child {
+    align-self: stretch;
+  }
+
+  article {
+    padding: 10px;
+    flex-basis: 100px;
+    width: 200px;
+    width: auto;
     height: 200px;
-    width: 100%;
-    background-color: green;
-    position: absolute;
-    border-bottom: 1px solid black;
-}
+    overflow: hidden;
+    margin: 10px;
+    background: aqua;
+  } */
+  /* ====================== */
 
-main {
+   /* flex wrap demonstration */
+   /* section {
     display: flex;
-    justify-content: space-between;
-    height: 100vh;
-    width: 100%;
-}
+    flex-wrap: wrap;
+    }
 
-.left-side-bar {
-    width: 400px;
-    background-color: rgb(192, 179, 179);
-    padding: 200px 0;
-    /* height: 100vh; */
-    border-right: 1px solid black;
-}
+    .grow {
+      flex-grow: 12;
+    }
 
-.right-side-bar {
-    width: 400px;
-    background-color: rgb(192, 179, 179);
-    padding: 200px 0;
-    /* height: 100vh; */
-    border-left: 1px solid black;
-}
-
-footer {
+    article {
+    padding: 10px;
+    flex-grow: 1;
     height: 200px;
-    width: 100%;
-    background-color: rgb(35, 154, 191);
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid black;
-}
+    width: 200px;
+    overflow: hidden;
+    margin: 10px;
+    background: aqua;
+    } */
+    /* ============================== */
+
+    /* changing sized */
+    /* Это просто означает, что каждому flex элементу сначала будет дано 200px от свободного места. Потом оставшееся место будет поделено в соответствии с частями пропорций. */
+    /* section {
+      display: flex;
+    }
+
+    article:nth-of-type(3) {
+      flex: 2 200px;
+    }
+
+    article {
+      padding: 10px;
+      flex: 1 100px;
+      overflow: hidden;
+      margin: 10px;
+      background: aqua;
+    } */
+    /* ========================== */
+
+  /* axis demonstration */
+  /* section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+  }
+
+  article:last-child {
+    order: 1;
+  }
+
+  article:first-child {
+    order: 2;
+  }
+
+  article {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 10px;
+    background: aqua;
+  } */
+  /* ==================================== */

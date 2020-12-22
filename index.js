@@ -1,14 +1,15 @@
-function* foo() {
-  yield console.log(1)
-  yield console.log(2)
-  yield console.log(3)
-  yield console.log(4)
+const axios = require('axios');
+let a = 20
+function foo() {
+  console.log(global)
+  return this.a
 }
 
-let it = foo();
-console.log(it.next().done)
-console.log(it.next().done)
-console.log(it.next().done)
-console.log(it.next().done)
-console.log(it.next().done)
+function main() {
+  let a = 10
+  console.log(foo())
+}
 
+let obj = {a: 39}
+
+foo()
