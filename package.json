@@ -1,0 +1,18 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "sandbox for code",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:ts": "ts-node-dev index.ts",
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maksym Popov",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.6",
+    "typescript": "^4.1.3"
+  }
+}
