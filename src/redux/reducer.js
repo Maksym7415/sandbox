@@ -1,11 +1,18 @@
-const { someAction } = require('./actions');
-const { SOME_TYPE } = require('./types');
+const { GREETING, NAME } = require('./types');
 
-function someReducer (state = {a: 2}, action) {
+function someReducer (state, action) {
   switch (action.type) {
-    case SOME_TYPE: {
+    case GREETING: {
       return {
-        [action.name]: action.data
+        ...state,
+        greeting: action.data,
+      }
+    }
+
+    case NAME: {
+      return {
+        ...state,
+        name: action.data,
       }
     }
 

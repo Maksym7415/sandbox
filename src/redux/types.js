@@ -1,6 +1,8 @@
-const SOME_TYPE = 'SOME_TYPE';
+const GREETING = 'GREETING';
+const NAME = 'NAME';
 
 module.exports = {
-  SOME_TYPE
+  GREETING,
+  NAME
 }
 

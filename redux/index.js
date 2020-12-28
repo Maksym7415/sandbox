@@ -4,45 +4,59 @@ class Redux {
   static #instance;
 
   // cause we are not able to make constructor private it's smth. like pollyfill for protecting this class from creating with new more than one time
-  constructor(reducer) {
+  constructor() {
     if (Redux.#instance) return new Error('You are not able to create instances via new');
-    this.#reducer = reducer;
   }
 
-  static getInstance(reducer) {
+  static getInstance() {
     if (!Redux.#instance) {
-      Redux.#instance = new Redux(reducer);
+      Redux.#instance = new Redux();
     }
 
     return Redux.#instance;
   }
   // --------------------------------->
 
-  #reducer;
+  #reducer = {}; // initial reducers object
+  #state = {}; // initial state object
 
+  // initializing reducers and states
   createReducer(reducer) {
-    this.#reducer = [reducer];
     for (let key in reducer) {
+      this.#reducer[key] = reducer[key];
       this.#state[key] = reducer[key](undefined, {})
     }
-    console.log(reducer)
   }
 
-  #state = {}
-
-  dispatch(key, value) {
-    this.#state[key] = value;
+  // changing states
+  dispatch(action) {
+    console.log('dispatch', action)
+    for (let key in this.#reducer) {
+      this.#state[key] = this.#reducer[key](this.#state[key], action)
+    }
   }
 
+  // states getter
   getState() {
     return this.#state
   }
 }
 
+// creating store instance
+const store = Redux.getInstance();
+
+// initializing reducers
+function createStore(reducer) {
+  store.createReducer(reducer)
+  return store;
+}
+
+// dispatch method
+function dispatch(action) {
+  store.dispatch(action)
+}
+
 module.exports = {
-  createStore: function createStore(reducer) {
-    const store = Redux.getInstance(reducer);
-    store.createReducer(reducer)
-    return store;
-  }
+  createStore,
+  dispatch
 }

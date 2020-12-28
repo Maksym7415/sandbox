@@ -1,13 +1,20 @@
-const { SOME_TYPE } = require('./types')
+const { GREETING, NAME } = require('./types')
 
-function someAction (data, name) {
+function greetingAction (data) {
   return {
-    type: SOME_TYPE,
-    name,
+    type: GREETING,
+    data
+  }
+}
+
+function nameAction (data) {
+  return {
+    type: NAME,
     data
   }
 }
 
 module.exports = {
-  someAction
+  greetingAction,
+  nameAction
 }
