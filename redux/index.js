@@ -5,7 +5,7 @@ class Redux {
 
   // cause we are not able to make constructor private it's smth. like pollyfill for protecting this class from creating with new more than one time
   constructor() {
-    // if (Redux.#instance) return new Error('You are not able to create instances via new');
+    if (Redux.#instance) return new Error('You are not able to create instances via new');
   }
 
   static getInstance() {
@@ -44,8 +44,6 @@ class Redux {
 
 // creating store instance
 const store = Redux.getInstance();
-const instance = new Redux()
-// console.log(instance)
 
 // initializing reducers
 function createStore(reducer) {
