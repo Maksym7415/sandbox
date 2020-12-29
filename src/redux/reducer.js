@@ -1,6 +1,6 @@
 const { GREETING, NAME } = require('./types');
 
-function someReducer (state, action) {
+function someReducer (state={a: 2}, action) {
   switch (action.type) {
     case GREETING: {
       return {

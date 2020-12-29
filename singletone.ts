@@ -24,6 +24,7 @@ class Singleton {
 
 const instance = Singleton.getInstance()
 const instance2 = Singleton.getInstance()
+const instance3 = new Singleton();
 instance.setStorage('b', 2)
 instance2.setStorage('c', 3)
 console.log(instance.getStorage())
