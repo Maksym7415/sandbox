@@ -15,24 +15,27 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/create-session', async (req, res) => {
-  const stripe = Stripe('sk_test_51HGjVfCcIG0MPJSGqWXIyvid7alHehKxkha54GxTEvxdR2U5HDVSNAjLDk5r8FS0SBVRCCxiRUAEYJM3cQ3j1euU00YxPPx5rh');
+  const stripe = Stripe('sk_test_...');
+  const { name, images, currency, amount, quantity } = req.body;
+  console.log(name, images, currency, amount, quantity)
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
       {
         price_data: {
-          currency: 'usd',
+          currency,
           product_data: {
-            name: 'T-shirt',
+            name,
+            images: [images]
           },
-          unit_amount: 2000,
+          unit_amount: amount,
         },
-        quantity: 1,
+        quantity,
       },
     ],
     mode: 'payment',
-    success_url: 'http://localhost:8000/success',
-    cancel_url: 'http://localhost:8000/cancel',
+    success_url: 'http://localhost:8000/success', // here should success page
+    cancel_url: 'http://localhost:8000/cancel', // here should be cancel page
   });
 
   res.json({ id: session.id });
