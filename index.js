@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.post('/create-session', async (req, res) => {
-  const stripe = Stripe('sk_test_...');
+  const stripe = Stripe('sk_test_51HGjVfCcIG0MPJSGqWXIyvid7alHehKxkha54GxTEvxdR2U5HDVSNAjLDk5r8FS0SBVRCCxiRUAEYJM3cQ3j1euU00YxPPx5rh');
   const { name, images, currency, amount, quantity } = req.body;
   console.log(name, images, currency, amount, quantity)
   const session = await stripe.checkout.sessions.create({
