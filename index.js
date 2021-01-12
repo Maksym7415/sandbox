@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-app.post('/sandbox/create-session', async (req, res) => {
+app.post('/sandbox/client-secret', async (req, res) => {
   const stripe = Stripe('sk_test_51HGjVfCcIG0MPJSGqWXIyvid7alHehKxkha54GxTEvxdR2U5HDVSNAjLDk5r8FS0SBVRCCxiRUAEYJM3cQ3j1euU00YxPPx5rh');
   const { currency, amount } = req.body;
   const paymentIntent = await stripe.paymentIntents.create({
