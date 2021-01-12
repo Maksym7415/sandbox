@@ -41,6 +41,8 @@ app.post('/create-session', async (req, res) => {
   res.json({ id: session.id });
 });
 
+app.use('*', (req, res) => res.send('Not found'))
+
 try {
   httpServer.listen(HTTP_PORT, async () => {
     console.log(`Listening on port ${HTTP_PORT}`);
